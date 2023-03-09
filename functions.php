@@ -11,8 +11,8 @@ function whichStyle(int $band_style, array $styles) {
     }
 }
 
-function createStyles(){
-    $fichier_style = file("styles.txt"); // Nom du fichier à afficher, son adresse de localisation
+function createStyles(string $file){
+    $fichier_style = file($file,FILE_IGNORE_NEW_LINES); // Nom du fichier à afficher, son adresse de localisation
 
     $total = count($fichier_style); // Nombre total des lignes du fichier
 
@@ -26,7 +26,7 @@ function createStyles(){
 
 function createBands(string $file){
     // Charger les Bands
-$fichier_band = file($file); // Nom du fichier à afficher, son adresse de localisation
+$fichier_band = file($file,FILE_IGNORE_NEW_LINES); // Nom du fichier à afficher, son adresse de localisation
  
 $total = count($fichier_band); // Nombre total des lignes du fichier
 
